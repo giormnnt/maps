@@ -1,3 +1,10 @@
+interface Mappable {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
+
 export class Map {
   private googleMap: google.maps.Map;
 
@@ -12,5 +19,12 @@ export class Map {
         },
       }
     );
+  }
+
+  addMarker(mappable: Mappable): void {
+    new google.maps.Marker({
+      map: this.googleMap,
+      position: { lat: mappable.location.lat, lng: mappable.location.lng },
+    });
   }
 }
