@@ -4,4 +4,4 @@ import { Map } from './Map';
 
 const user = new User();
 const company = new Company();
-new Map();
+new Map('map');
